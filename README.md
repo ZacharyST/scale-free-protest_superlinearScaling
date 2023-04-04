@@ -2,6 +2,7 @@
 
 
 --------------- NEW -------------
+
 This project investigates the scaling properties of protest, specifically how protest size changes as a function of network size.
 
 Scripts/simulations.py is from the shanest/scale_free_protest repository.
@@ -12,6 +13,7 @@ Motivation/OLD_Protest_SuperlinearScaling.pdf summarizes the state of this proje
 
 
 --------------- OLD ----------------
+
 Companion repository to the paper ``How Social Networks Affect the Repression-Dissent Puzzle''.
 
 Runs network simulations of the spread of protest with varying network structure and repression mechanisms.
