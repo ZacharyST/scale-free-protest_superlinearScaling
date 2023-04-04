@@ -1,5 +1,17 @@
 # scale-free-protest
 
+
+--------------- NEW -------------
+This project investigates the scaling properties of protest, specifically how protest size changes as a function of network size.
+
+Scripts/simulations.py is from the shanest/scale_free_protest repository.
+
+See Steinert-Threlkeld and Steinert-Threlkeld (2021),  "How social networks affect the repression-dissent puzzle" in  PLOS ONE, for descriptions of original modeling decisions.  For this project, focus on the Holme-Kim model across its ranges of m_t, with particular attention to m_t=.315.
+
+Motivation/OLD_Protest_SuperlinearScaling.pdf summarizes the state of this project as of November 1, 2018.  This paper documents superlinear scaling in actual protest data and shows initial modeling that failed to generate superlinear scaling.  The models used for those results are earlier, less sophisticated versions of what was used in the PLOS ONE paper, so inability to generate scaling should not be overinterpreted.  In addition to providing motivation, the key use of this paper is to show the analysis to perform for the simulation results.  The x-axis will be network size, the y-axis is size of a simulation's protest, and the line of best fit is the resulting scaling relationship.
+
+
+--------------- OLD ----------------
 Companion repository to the paper ``How Social Networks Affect the Repression-Dissent Puzzle''.
 
 Runs network simulations of the spread of protest with varying network structure and repression mechanisms.
