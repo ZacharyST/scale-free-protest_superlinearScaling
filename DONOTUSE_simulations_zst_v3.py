@@ -5,6 +5,7 @@ _zst_v2: Modified to work with .yml file that provides parameters of arguments f
     u_max = max of uniform distribution.
     n_mu = mean of normal distribution
     n_sd = variance of normal distribution
+_zst_3: Moving the dataframe construction outside of the while not stop loop in run_trials
 '''
 
 from __future__ import division, print_function
@@ -29,7 +30,6 @@ try:
 except ImportError:
     from yaml import Loader, Dumper
 
-import cProfile  # For profiling code
 # TODO: document the module
 
 
@@ -450,6 +450,7 @@ def run_trial(
     stop = False
 
     # MAIN LOOP
+    data_list = []
     while not stop:
 
         # deactivate nodes that no longer should be active
@@ -502,9 +503,13 @@ def run_trial(
                 community_sizes, communities
             )
             #data = data.append(iter_dict, ignore_index=True)
-            temp = pd.DataFrame(iter_dict, index=[0])
-            data = pd.concat([data,temp], ignore_index=True)  # as of pandas 2.0, append is removed for concat.
-    data["num_iters"] = num_iters
+            #temp = pd.DataFrame(iter_dict, index=[0])
+            data_list.append(iter_dict)
+            #data = pd.concat([data,temp], ignore_index=True)  # as of pandas 2.0, append is removed for concat.
+    df_temp = pd.DataFrame(data_list)
+    df_temp['num_iters'] = num_iters
+    data = pd.concat([data, df_temp], ignore_index=True)
+    #data["num_iters"] = num_iters
     return data
 
 
